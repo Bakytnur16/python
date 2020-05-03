@@ -1,4 +1,4 @@
 a = int(input())
-members = [input().split() for _ in range(a)]
-for i in sorted(members, key=lambda x: int(x[1]), reverse=True):
-    print(i[0])
+man = sorted([input().split() for i in range(a)], key=lambda x:x[1], reverse=True)
+for j in man:
+    print(*j)
