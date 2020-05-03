@@ -11,7 +11,6 @@ class Matrix():
     def size(self):
         return (len(self.a), len(self.a[0]))
 
-m = Matrix([[1, 1, 0], [0, 2, 10], [10, 15, 30]])
-alpha = 15
-print(m * alpha)
-print(alpha * m)
+m1 = Matrix([[1, 0, 0], [1, 1, 1], [0, 0, 0]])
+m2 = Matrix([[1, 0, 0], [1, 1, 1], [0, 0, 0]])
+print(str(m1) == str(m2))
