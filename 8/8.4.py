@@ -1,2 +1,1 @@
-import sys
-print(0 in map(int, sys.stdin.read().split('\n')))
+print(0 in [int(input())for i in range(int(input()))])
