@@ -1,4 +1,4 @@
 n = int(input())
-b = list(map(int, input().split()))
-b.sort()
-print(' '.join(map(str, b)))
+a = list(map(int, input().split()))
+a.sort()
+print(*[x for x in a if x < 10])
