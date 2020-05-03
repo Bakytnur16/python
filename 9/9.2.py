@@ -9,8 +9,6 @@ class Matrix:
     def __str__(self):
         return '\n'.join(['\t'.join(map(str, list)) for list in self.matrix])
 
-    def __add__(self, other):
-        return Matrix()
 
     def size(self):
         return (len(self.matrix), len(self.matrix[0]))
