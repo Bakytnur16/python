@@ -1,13 +1,11 @@
 import codecs
 inFile = open('input.txt', 'r', encoding='utf-8')
-matrix = []
+name_score = []
 for line in inFile:
     line = line.split()
     line.pop(2)
-    matrix.append(line)
+    name_score.append(line)
 inFile.close()
-matrix.sort()
-for i in matrix:
-    for j in i:
-        print(j, end=' ')
-    print()
+name_score.sort()
+for i in name_score:
+    print(*i)
