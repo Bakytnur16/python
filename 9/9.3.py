@@ -12,16 +12,7 @@ class Matrix:
     def __init__(self, matrix):
         self.matrix = deepcopy(matrix)
 
-    def __str__(self):
-        string = ""
-        amount = 0
-        for matrix in self.matrix:
-            if amount != 0:
-                string += "\n"
-            new_str = "\t".join(str(elem) for elem in matrix)
-            string += new_str
-            amount += 1
-        return string
+        return '\n'.join(['\t'.join(map(str, list)) for list in self.matrix])
 
     def size(self):
         return (len(self.matrix), len(self.matrix[0]))
