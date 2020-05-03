@@ -1,8 +1,8 @@
-x = [int(s) for s in input().split()]
+x = map(int,input().split())
 y = set()
-for num in x:
-    if num in y:
-        print('YES')
+for i in x:
+    if i in x:
+        print('yes')
     else:
-        print('NO')
-        y.add(num)
+        print('no')
+        y.add(i)
