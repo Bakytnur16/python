@@ -15,7 +15,7 @@ class Matrix:
 
     def __add__(self, other):
         return Matrix(list(map(
-                        lambda x, y: list(map(lambda z, w: z + w, x, y)),
+                        lambda x, y: list(map(lambda z, w: z + w)),
                         self.matrix, other.matrix)))
 
     def __mul__(self, other):
