@@ -1,7 +1,9 @@
-s, n = map(int, input().split())
-v = sorted([int(input()) for _ in range(n)])
-a = sum(v)
-while a > s and n:
-    a -= v.pop()
+s, n = map(int, (input().split()))
+a = sorted([int(input()) for i in range(n)])
+b = sum(a)
+if b <= s:
+    print(n)
+elif b > s:
+    b = b - a.pop()
     n -= 1
-print(n)
+    print(n)
