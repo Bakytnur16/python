@@ -204,3 +204,46 @@ remove()
 symmetric_difference()
 symmetric_difference_update()	
 union()
+
+### 条件语句
+1. 每个条件后面要使用冒号 :，表示接下来是满足条件后要执行的语句块。
+2. 使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块。
+3.  在Python中没有switch – case语句。  
+
+elif = else if
+
+```
+a = 1
+while a <= 20:
+#如果把a += 1 放在这，会计算到21为止，所以放最后
+    if (a % 2 == 0):
+        print(a, 'is even')
+    else:
+        print(a, 'is odd')
+    a += 1 # 因为是循环，放在最后可以一直循环计算到20为止；没有这句会一直循环一
+```
+
+```
+num = int(input("来输入个数字呗： "))
+while num < 30:
+    if (num % 2 == 0):
+        if (num % 3 == 0):
+            print(f'{num}能被2和3整除')
+        else:
+            print(f'{num}只能被2整除')
+    elif (num % 3 == 0):
+        if (num %2 == 0):
+            print(f'{num}能被2和3整除')
+        else:
+            print(f'{num}只能被3整除')
+    else:
+        print(f'{num}哪里来的数字头疼')
+    num += 1;
+```
+```
+a = int(input('随便来个数字:'));
+while a > 0:
+    print(a, end=',');
+    a -= 3;
+
+```
