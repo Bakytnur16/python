@@ -75,6 +75,17 @@ dictionary是无序的对象集合。
 ```
 print (tinydict.keys())   # 输出所有键
 print (tinydict.values()) # 输出所有值
+
+tel = {'jack': 4098, 'sape': 4139}
+# t = {x: x**2 for x in (2, 4, 5)}
+tel['guido'] = 4127
+for x, y in tel.items():
+    print(x, y)
+    
+questions = ['name', 'age', 'gender', 'id']
+answers = ['shuak', 18, 'female', '000111']
+for x, y in zip(questions, answers):
+    print(f'{x} : {y}')
 ```
 
 > 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；  
@@ -372,4 +383,174 @@ def Foo(x):
 
 print(Foo(4))
 等于10
+```
+```
+a = [1,2,3]
+# b = [2 * x for x in a]
+# c = [x + y for x in a for y in b]
+# print(c) #等于第一个元素分别乘以b的所有元素直到a的所有元素乘完
+```
+```
+for i in reversed(range(0,11,2)):
+    print(i, end=',')
+else:
+    print('负数不在范围内')
+
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for f in sorted(set(basket)):
+    print(f, end=',')
+```
+
+### 模块
+import
+from … import 
+from modname import * 导入全部模块的内容
+内置的函数 dir() 可以找到模块内定义的所有名称
+
+#### 输入和输出
+第三种方式是使用文件对象的 write() 方法，标准输出文件可以用 sys.stdout 引用。
+如果你希望输出的形式更加多样，可以使用 str.format() 函数来格式化输出值。
+如果你希望将输出的值转成字符串，可以使用 repr() 或 str() 函数来实现。
+str()： 函数返回一个用户易读的表达形式。
+repr()： 产生一个解释器易读的表达形式。
+
+open(filename, mode) mode 打开文件的模式：只读，写入，追加等。
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closefd=True, opener=None)
+file: 必需，文件路径（相对或者绝对路径）。
+mode: 可选，文件打开模式
+buffering: 设置缓冲
+encoding: 一般使用utf8
+errors: 报错级别
+newline: 区分换行符
+closefd: 传入的file参数类型
+opener: 设置自定义开启器，开启器的返回值必须是一个打开的文件描述符。
+
+r - 只读
+rb - 二进制只读
+rb+ 文件指针在文件开头
+w - 写入
+a - 追加
+
+f.read()
+f.readlines()返回文件中包含的所有行
+f.write()
+f.tell()
+f.seek()
+f.close()
+f.fileno()
+f.isatty()
+f.truncate
+f.writelines()
+f.flush()
+
+#### pickle 模快
+python的pickle模块实现了基本的数据序列和反序列化。
+
+#### os 模块
+os 模块提供了非常丰富的方法用来处理文件和目录
+
+### 错误和异常
+try/except
+try: 执行代码
+except: 发生异常时执行的代码
+else：没有异常时执行的代码
+finally: 有没有异常都会执行的代码
+```
+while True:
+    try:
+        x = int(input('请输入一个整数： '))
+        break
+    except ValueError:
+        print('您输入的不是整数，请再次尝试')
+```
+抛出异常： raise
+使用raise [Exception [, args [, traceback]]] 触发异常
+
+### 面向对象：
+```
+class complex:
+    def __init__(self,realpart, imagpart):
+        self.r  = realpart
+        self.i = imagpart
+x = complex(3.0, -4.5)
+print(x.r, x.i)
+```
+在类的内部，使用 def 关键字来定义一个方法，与一般函数定义不同，类方法必须包含参数 self, 且为第一个参数，self 代表的是类的实例。
+```
+class people:
+    name = ''
+    age = 0
+    __weight__ = 0
+    def __init__(self, n ,a, w):
+        self.name = n
+        self.age = a
+        self.__weight__ = w
+    def speak(self):
+        print('%s 说： 我今年 %d .' %(self.name,self.age))
+
+p = people('shuak', 10, 20)
+p.speak()
+```
+
+#### 继承
+子类（派生类 DerivedClassName）会继承父类（基类 BaseClassName）的属性和方法。
+class DerivedClassName(modname.BaseClassName):
+单继承
+```
+class people:
+    name = ''
+    age = 0
+    __weight__ = 0
+    def __init__(self, n ,a, w):
+        self.name = n
+        self.age = a
+        self.__weight__ = w
+    def speak(self):
+        print('%s 说： 我今年 %d .' %(self.name,self.age))
+class student(people):
+    grade = ''
+    def __init__(self, n, a, w, g): #调用父类的构函
+        people.__init__(self,n, a ,w)
+        self.grade = g
+    def speak(self):
+        print(f'{self.name}说： 我今年{self.age}岁了。我在读{self.grade}年级')
+
+s= student('shuak', 10, 60,3)
+s.speak()
+```
+多继承
+```
+class DerivedClassName(Base1, Base2, Base3):
+class people:
+    name = ''
+    age = 0
+    __weight__ = 0
+    def __init__(self, n ,a, w):
+        self.name = n
+        self.age = a
+        self.__weight__ = w
+    def speak(self):
+        print('%s 说： 我今年 %d .' %(self.name,self.age))
+class student(people):
+    grade = ''
+    def __init__(self, n, a, w, g): #调用父类的构函
+        people.__init__(self,n, a ,w)
+        self.grade = g
+    def speak(self):
+        print(f'{self.name}说： 我今年{self.age}岁了。我在读{self.grade}年级')
+class speaker():
+    topic = ''
+    name = ''
+    def __init__(self, n, t):
+        self.topic = t
+        self.name = n
+    def speak(self):
+        print(f'我是一名演说家，我叫{self.name}, 我演讲的主题是{self.topic}')
+class sample(speaker,student):
+    a = ''
+    def __init__(self,n,a,w,g,t):
+        student.__init__(self,n,a,w,g)
+        speaker.__init__(self,n,t)
+s= sample('shuak', 25, 80,4, "python")
+s.speak()
 ```
