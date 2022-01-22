@@ -569,3 +569,42 @@ b = float(input('输入三角形第二边长: '))
 c = float(input('输入三角形第三边长: '))
 print('三角形的面积是 ',area(a,b,c))
 ```
+
+## 正则表达式
+re 模块使 Python 语言拥有全部的正则表达式功能。
+re.match(pattern, string, flags=0)
+```
+import re
+print(re.match('www', 'www.runoob.com').span())  # 在起始位置匹配
+```
+pattern	匹配的正则表达式
+string	要匹配的字符串。
+flags	标志位，用于控制正则表达式的匹配方式，如：是否区分大小写，多行匹配等等。
+
+re.search(pattern, string, flags=0)
+re.sub
+re.findall
+re.finditer
+re.RegexObject
+re.compile() 返回 RegexObject 对象。
+re.MatchObject
+group() 返回被 RE 匹配的字符串。
+
+
+## CGI
+CGI(Common Gateway Interface),通用网关接口,它是一段程序,运行在服务器上如：HTTP服务器，提供同客户端HTML页面的接口。
+
+### 数据库
+
+## 网络编程
+Python 提供了两个级别访问的网络服务。：
+低级别的网络服务支持基本的 Socket，它提供了标准的 BSD Sockets API，可以访问底层操作系统Socket接口的全部方法。
+高级别的网络服务模块 SocketServer， 它提供了服务器中心类，可以简化网络服务器的开发。
+
+Socket又称"套接字"，应用程序通常通过"套接字"向网络发出请求或者应答网络请求，使主机间或者一台计算机上的进程间可以通讯。
+
+## 多线程
+## xml解析
+## python Json 数据解析
+## urllib
+Python urllib 库用于操作网页 URL，并对网页的内容进行抓取处理。
