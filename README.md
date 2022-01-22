@@ -247,3 +247,51 @@ while a > 0:
     a -= 3;
 
 ```
+```
+a = int(input('计算从0到这个数的总和:'))
+sum = 0
+i = 1
+while i <= a:
+    sum += i
+    i += 1
+print(f'从0到{a}的和是：{sum}')
+```
+
+CTRL+C 来退出当前的无限循环
+```
+a = int(input('计算从0到这个数的奇数总和:'))
+sum = 0
+i = 1
+while i <= a:
+    sum += i
+    i += 2
+print(f'从0到{a}的和是：{sum}')
+```
+
+```
+a = int(input('计算从0到这个数的偶数总和:'))
+sum = 0
+i = 0
+while i <= a:
+    sum += i
+    i += 2
+print(f'从0到{a}的和是：{sum}')
+```
+```
+a = int(input('随便来个数字:'));
+while a > 0:
+    print(a, end=',');
+    a -= 1;
+else:
+    print('负数不在取值范围内')
+```
+```
+n = (20,'str','bob') #tuple
+for x in n:
+    if (x == 'bob'):
+        print('找到了')
+        break
+    print('一个一个找吧', x)
+else:
+    print('不用在找了，没有')
+```
