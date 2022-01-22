@@ -126,6 +126,7 @@ True
 
 ### 函数
 #### 数学函数：
+import cmath
 abs
 ceil
 exp
