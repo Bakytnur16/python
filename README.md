@@ -295,3 +295,55 @@ for x in n:
 else:
     print('不用在找了，没有')
 ```
+```
+a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
+for i in range(len(a)):
+    print(i,a[i], end=',')
+```
+```
+for n in range(2,10):
+    for x in range(2,n):
+        if n % x == 0:
+            print(n,'等于',x,'*', n//x)
+            break
+    else:
+        print(n,'是质数')
+```
+
+## 迭代器
+可以记住遍历的位置的对象。
+迭代器有两个基本的方法：iter() 和 next()。
+```
+it = iter(d)
+for x in it:
+    print(x,end=' ')
+    
+it = iter(d)
+print(next(id))
+
+创建迭代器的类： __iter__() 和 __next__()
+StopIteration 异常用于标识迭代的完成，防止出现无限循环的情况
+it = iter(d)
+while True:
+    try:
+        print(next(it))
+    except StopIteration:
+        sys.exit()
+```
+
+## 生成器
+生成器就是一个迭代器
+
+## 函数
+函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。
+```
+def max(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+a = int(input('输一个数字: '))
+b = int(input('输一个数字: '))
+print(max(a,b))
+```
