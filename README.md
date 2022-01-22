@@ -166,17 +166,17 @@ rindex( str, beg=0, end=len(string))
 #### 列表
 len(list)
 list(seq)
-list.append(obj)
-list.count(obj)
-list.extend(seq)
-list.index(obj)
-list.insert(index, obj)
-list.pop([index=-1])
-list.remove(obj)
-list.reverse()
-list.sort( key=None, reverse=False)
-list.clear()
-list.copy()
+list.append(obj) 元素添加到列表尾
+list.insert(序列, obj) 指定位置插入一个元素，原本的元素向后移
+list.count(obj)  在列表中出现的次数
+list.extend(seq) 通过添加指定列表的所有元素来扩充列表，相当于 a[len(a):] = L。
+list.index(obj)返回第一个值为 x 的元素的索引
+list.pop([index=-1])指定位置移除元素 没有指定索引，a.pop()返回最后一个元素
+list.remove(obj)删除列表中值为 x 的第一个元素
+list.reverse()倒排
+list.sort( key=None, reverse=False)排序
+list.clear()移除所有项
+list.copy() 浅复制
 
 #### 字典 
 str(dict)
@@ -346,4 +346,30 @@ def max(a, b):
 a = int(input('输一个数字: '))
 b = int(input('输一个数字: '))
 print(max(a,b))
+```
+```
+def printInfo(name, age):
+    print(f'Hello {name}.Your age is {age}')
+    return
+a = str(input('请输入您的名字: '))
+b = int(input('请输入您的年龄: '))
+printInfo(a,b)
+```
+加了星号 * 的参数会以元组(tuple)的形式导入
+加了两个星号 ** 的参数会以字典的形式导入
+python 使用 lambda 来创建匿名函数。
+sum = lambda arg1, arg2: arg1 + arg2
+```
+sum = lambda agr1, agr2: agr1 + agr2
+print(sum(10, 20))
+```
+```
+def Foo(x):
+    if (x==1):
+        return 1
+    else:
+        return x+Foo(x-1)
+
+print(Foo(4))
+等于10
 ```
