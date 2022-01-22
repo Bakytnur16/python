@@ -233,7 +233,12 @@ while a <= 20:
         print(a, 'is odd')
     a += 1 # 因为是循环，放在最后可以一直循环计算到20为止；没有这句会一直循环一
 ```
-
+```
+sum = 0
+for a in range(0, 101):
+    sum += a
+print(sum)
+```
 ```
 num = int(input("来输入个数字呗： "))
 while num < 30:
@@ -553,4 +558,14 @@ class sample(speaker,student):
         speaker.__init__(self,n,t)
 s= sample('shuak', 25, 80,4, "python")
 s.speak()
+```
+```
+def area(a,b,c):
+    s = (a + b + c) / 2
+    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
+    return area
+a = float(input('输入三角形第一边长: '))
+b = float(input('输入三角形第二边长: '))
+c = float(input('输入三角形第三边长: '))
+print('三角形的面积是 ',area(a,b,c))
 ```
