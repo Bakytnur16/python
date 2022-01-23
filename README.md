@@ -1,10 +1,18 @@
 # python
-1. 大小写敏感
+1. 大小写敏
 2. 注释
 > 单行：#注释  
 > 多行：'''注释''' 或者""" """
 
 r = raw string，会自动将反斜杠转义
+\n 换行new line character 
+\t tab 制表符
+\\ 反斜杠（\）
+\' 单引号（'）
+\" 双引号（"）
+\f ASCII 进纸符（FF）
+\n ASCII 换行符（LF）
+\t ASCII 水平制表符（TAB）
 ```
 print('r\n') # 打印 \n
 print('\n') #打印空行
@@ -12,14 +20,33 @@ print('\n') #打印空行
 3. 多行语句用\
 4. Python 可以在同一行中使用多条语句，语句之间使用分号 ;
 
-### Python3 中有六个标准的数据类型：
-1. Number（数字）:整数、布尔型、浮点数和复数  
+
+```
+x = "shuak is {} years old"
+y = 20
+print(x.format(y))
+
+print("its fleece was white as {}.".format('snow'))
+
+a = "{} {} {} {}"
+print(a.format(1, 2, 3, 4))
+
+print("""
+dfdfjd
+fjdifjdifjifj
+dfeifjeifj
+""")
+```
+
+## Python3 中有六个标准的数据类型：
+### Number（数字）:整数、布尔型、浮点数和复数  
 > int (整数), 如 1, 只有一种整数类型 int，表示为长整型。  
-> bool (布尔), 如 True。  
+> bool (布尔), 如 True. :True 和 False 是 Python 的关键字，用来表示真和假的概念。如果加了引号，它们
+就变成了字符串，也就无法实现它们本来的功能了 
 > float (浮点数), 如 1.23、3E-2  
 > complex (复数), 如 1 + 2j、 1.1 + 2.2j
 
-2. String（字符串) *变量[头下标:尾下标:步长]：*  
+### String（字符串) *变量[头下标:尾下标:步长]：*  
 0 1 2 3 4  
 -5 -4 -3 -2 -1  
 > string: 使用三引号(''' 或 """)可以指定一个多行字符串。  
@@ -28,7 +55,7 @@ str='1234567890'
 print(str[1:7:2]) #打印第二个到第七个之前的每隔一个字符的字符
 print(str[:]) #打印所有
 ```  
-3. List（列表）: *变量[头下标:尾下标]*  
+### List（列表）: *变量[头下标:尾下标]*  
 ```
 list = ['absc', 890, 2.23, 'bei']
 print(list[0])
@@ -42,13 +69,13 @@ del list[2]
 [['a', 'b', 'c'], [1, 2, 3]]
 ```  
 
-4. Tuple（元组） 元素不可修改  
+### Tuple（元组） 元素不可修改  
 tuple = ( 'abcd', 786 , 2.23, 'runoob', 70.2  )
 tup2 = (20,) # 一个元素，需要在元素后添加逗号  
 元组也可以使用+操作符进行拼接。  
 
 
-5. Set（集合）
+### Set（集合）
 基本功能是进行成员关系测试和删除重复元素。
 创建一个空集合必须用 set()  
 ```  
@@ -68,7 +95,7 @@ s.discard( x )
 s.pop()  随即删除
 ```  
 
-6. Dictionary（字典）  
+### Dictionary（字典）  
 list是有序的对象集合  
 dictionary是无序的对象集合。  
 字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。键(key)是唯一的  
@@ -99,18 +126,22 @@ s = {20,'str','bob'} #set
 a = {'name': 'bob','age':20,'type':'str'} #dic  
 ```  
 
-#### 算术计算符
+### 算术计算符
+运算优先级：pemdas 括号（Parentheses）、指数（Exponents）、乘（Multiplication）、除（Division）、加（Addition）、减（Subtraction）
+变量 variable
 % 返回除法的余数
 // - 向下取接近商的整数
 ** 指数（最高优先级）
 
-#### 位运算符
+=的作用是将右边的值赋给左边的变量名。==的作用是检查左右两边的值是否相等
+
+### 位运算符
 & | ^ ~  << >>
 
-#### 成员运算符
+### 成员运算符
 in /  not in
 
-#### 身份运算符
+### 身份运算符
 is is not
 
 is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。
@@ -124,7 +155,7 @@ True
 
 优先级顺序为 NOT、AND、OR
 
-### 函数
+## 函数
 #### 数学函数：
 abs
 ceil
@@ -412,6 +443,35 @@ from … import
 from modname import * 导入全部模块的内容
 内置的函数 dir() 可以找到模块内定义的所有名称
 
+argv 解包（unpack)
+参数变量（argument variable）
+导入（import）的特性称为模块：模块（module）
+
+
+```
+cmd<< python 12.py Zio #take argument
+from sys import argv
+#python test.py zed
+main, user_name = argv
+prompt = '> '
+
+print(f"Hi {user_name}m I'm the {main} script.")
+print("I'd like to ask you a few questions.")
+print(f"Do you like me {user_name}?")
+likes = input(prompt)
+
+print(f"Where do you live {user_name}?")
+lives = input(prompt)
+
+print(f"What kind of computer do you have?")
+computer = input(prompt)
+
+print(f"""
+Alright, so you said {likes} about liking me.
+You live in {lives}. Not sure where that is.
+And you have a {computer} computer.Nice.
+""")
+```
 #### 输入和输出
 第三种方式是使用文件对象的 write() 方法，标准输出文件可以用 sys.stdout 引用。
 如果你希望输出的形式更加多样，可以使用 str.format() 函数来格式化输出值。
@@ -448,6 +508,23 @@ f.truncate
 f.writelines()
 f.flush()
 
+```
+from sys import argv
+
+script, filename = argv
+
+txt = open(filename)
+
+print(f"Here's your file {filename}:")
+print(txt.read())
+print("Type the filename again: ")
+file_again = input('> ')
+
+txt_again = open(file_again)
+
+print(txt_again.read())
+```
+
 #### pickle 模快
 python的pickle模块实现了基本的数据序列和反序列化。
 
@@ -455,6 +532,7 @@ python的pickle模块实现了基本的数据序列和反序列化。
 os 模块提供了非常丰富的方法用来处理文件和目录
 
 ### 错误和异常
+SyntaxError（语法错误）
 try/except
 try: 执行代码
 except: 发生异常时执行的代码
