@@ -20,16 +20,19 @@ print('\n') #打印空行
 3. 多行语句用\
 4. Python 可以在同一行中使用多条语句，语句之间使用分号 ;
 
-
+#### print
 ```
-x = "shuak is {} years old"
-y = 20
-print(x.format(y))
-
-print("its fleece was white as {}.".format('snow'))
-
-a = "{} {} {} {}"
-print(a.format(1, 2, 3, 4))
+name = 'bob'
+a = 'my name is {}'
+x = "My name is "
+y = "{} {}"
+print('my name is {}'.format(name))
+print('my name is bob')
+print(f'my name is {name}')
+print('my name is ', name)
+print(a.format(name))
+print(x + name)
+print(y.format(x,name))
 
 print("""
 dfdfjd
@@ -137,6 +140,8 @@ a = {'name': 'bob','age':20,'type':'str'} #dic
 
 ### 位运算符
 & | ^ ~  << >>
+
+#### 逻辑:and 与 ，or： 或， not：非
 
 ### 成员运算符
 in /  not in
@@ -443,6 +448,7 @@ from … import
 from modname import * 导入全部模块的内容
 内置的函数 dir() 可以找到模块内定义的所有名称
 
+argv 即所谓的参数变量（argument variable）
 argv 解包（unpack)
 参数变量（argument variable）
 导入（import）的特性称为模块：模块（module）
@@ -489,12 +495,19 @@ errors: 报错级别
 newline: 区分换行符
 closefd: 传入的file参数类型
 opener: 设置自定义开启器，开启器的返回值必须是一个打开的文件描述符。
+close：关闭文件。跟你的编辑器中的“文件”→“保存”是一个意思。
+read：读取文件的内容。你可以把结果赋给一个变量。
+readline：只读取文本文件中的一行。
+truncate：清空文件，请小心使用该命令。
+write('stuff')：将“stuff”写入文件。
+seek(0)：将读写位置移动到文件开头。
 
+最重要的一个是+修饰符，你可以用它来实现'w+'、'r+'和'a+'。这样可以把文件用同时读写的方法打开
 r - 只读
 rb - 二进制只读
 rb+ 文件指针在文件开头
 w - 写入
-a - 追加
+a - 追加 append
 
 f.read()
 f.readlines()返回文件中包含的所有行
@@ -514,7 +527,7 @@ from sys import argv
 script, filename = argv
 
 txt = open(filename)
-
+# txt = open(filename)返回的是“文件对象”（file object）
 print(f"Here's your file {filename}:")
 print(txt.read())
 print("Type the filename again: ")
@@ -525,11 +538,46 @@ txt_again = open(file_again)
 print(txt_again.read())
 ```
 
+```
+from sys import argv
+script, filename = argv
+print(f"we are opend{filename}")
+target = open(filename, 'w') #定位文件对象
+target.truncate() #清除所有内容
+print("please enter yout text")
+text = (input('enter text')) #写下要输进文件内容
+target.write(text) #把内容写进文件里
+target.close() #关闭保存
+
+again_filename = input('enter the file name')
+a = open(again_filename) #定义文件对象
+print(a.read()) #读取内容
+```
+```
+from sys import argv
+
+script, from_file, to_file = argv
+
+in_file = open(from_file) #文件对象
+data = in_file.read() # 读取文件内容
+out_file = open(to_file, 'w') #文件对象，可写
+out_file.write(data) #内容写入第二个文件
+print('down')
+
+in_file.close()
+out_file.close()
+```
+
 #### pickle 模快
 python的pickle模块实现了基本的数据序列和反序列化。
 
 #### os 模块
 os 模块提供了非常丰富的方法用来处理文件和目录
+exists验证对象是否存在
+```
+# from os.path import exists
+# print(f"Does the output file exist? {exists(to_file)}")
+```
 
 ### 错误和异常
 SyntaxError（语法错误）
@@ -686,3 +734,5 @@ Socket又称"套接字"，应用程序通常通过"套接字"向网络发出请�
 ## python Json 数据解析
 ## urllib
 Python urllib 库用于操作网页 URL，并对网页的内容进行抓取处理。
+
+DBES——“decode bytes, encode strings”
