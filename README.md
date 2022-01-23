@@ -389,6 +389,17 @@ while True:
 ## 函数
 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。
 ```
+def add(number):
+    tom  = number * 3
+    bob = number / 2
+    jack = number - 10
+    return tom,bob,jack
+
+a = 60
+x, y, z = add(a) #函数的特性：函数里的变量是临时的，所以前面用了jack，bob还是tom也好，后面添加的x， y， z变量不受影响。照样计算
+print(f"{x} {y} {x}")
+```
+```
 def max(a, b):
     if a > b:
         return a
@@ -736,3 +747,23 @@ Socket又称"套接字"，应用程序通常通过"套接字"向网络发出请�
 Python urllib 库用于操作网页 URL，并对网页的内容进行抓取处理。
 
 DBES——“decode bytes, encode strings”
+```
+def print_two(*args): #*args 把函数的所有参数都接收进来
+    arg1, arg2 = args
+    print(f"arg1: {arg1}, arg2: {arg2}")
+
+def print_two_again(arg1, arg2):
+    print(f"arg1: {arg1}, arg2: {arg2}")
+
+def print_one(arg1): #接受了一个参数
+    print(f"arg1: {arg1}")
+
+def print_none(): #不接受任何参数
+    print("I got nothin'.")
+
+print_two("Zed","Shaw")
+print_two_again("Zed","Shaw")
+print_one("Frist!")
+print_none()
+```
+
