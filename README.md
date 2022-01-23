@@ -500,7 +500,7 @@ p.speak()
 #### 继承
 子类（派生类 DerivedClassName）会继承父类（基类 BaseClassName）的属性和方法。
 class DerivedClassName(modname.BaseClassName):
-单继承
+*单继承*
 ```
 class people:
     name = ''
@@ -523,7 +523,7 @@ class student(people):
 s= student('shuak', 10, 60,3)
 s.speak()
 ```
-多继承
+*多继承*
 ```
 class DerivedClassName(Base1, Base2, Base3):
 class people:
