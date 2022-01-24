@@ -160,6 +160,30 @@ True
 
 优先级顺序为 NOT、AND、OR
 
+### 关键字
+
+and 逻辑 与
+assert 确保某东西为真 assert False, "Error!"
+as with-as 语句  with X as Y: pass
+exec 字符串作为 Python 脚本运行 exec 'print("hello")'
+global 全局变量 global X
+is 类似于==，判断是否一样
+lambda 匿名函数
+not 逻辑 非
+or 逻辑 或
+return 返回值并退出函数
+with 将表达式作为一个变量，然后执行代码块
+yield 暂停函数，返回到调用函数的代码中
+
+@ 修饰器符 @classmethod
+
+
+旧版：
+%d 十进制整数
+%f 浮点实数
+%s 字符串格式
+
+
 ## 函数
 #### 数学函数：
 abs
@@ -361,7 +385,50 @@ for n in range(2,10):
     else:
         print(n,'是质数')
 ```
+```
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
+for number in the_count:
+    print(f"This is count {number}")
+
+for fruit in fruits:
+    print(f"A fruit og type: {fruit}")
+
+for i in change:
+    print(f"I got {i}")
+
+elements = []
+
+for i in range(0,6):
+    print(f"adding {i} to the list.")
+    elements.append(i)
+
+for i in elements:
+    print(f"Element was:{i}")
+```
+```
+element =[]
+ele = []
+for i in range(0, 11):
+    if i % 2 == 0:
+        print(f"{i} is even")
+        element.append(i)
+    else:
+        print(f"{i} == is odd")
+        ele.append(i)
+print(ele, element)
+```
+```
+i = 0
+numbers = []
+while i <= 10:
+    print(f"加入{i}")
+    numbers.append(i)
+    i += 1
+print(numbers)
+```
 ## 迭代器
 可以记住遍历的位置的对象。
 迭代器有两个基本的方法：iter() 和 next()。
@@ -609,6 +676,14 @@ while True:
 使用raise [Exception [, args [, traceback]]] 触发异常
 
 ### 面向对象：
+组合（composition）：指一个类可以将别的类作为它的部件构建起来，有点儿像车子和车轮的关系。
+属性（attribute）：类的一个属性，它来自于组合，而且通常是一个变量。
+self：在类的函数中，self 指代被访问的对象或者实例的一个变量。
+是什么（is-a）：用来描述继承关系
+有什么（has-a）：用来描述某个东西是由另外一些东西组成的，或者某个东西有某个特征
+
+- class X(Y)：创建一个叫 X 的类，它是 Y 的一种 
+- 
 ```
 class complex:
     def __init__(self,realpart, imagpart):
@@ -634,7 +709,7 @@ p = people('shuak', 10, 20)
 p.speak()
 ```
 
-#### 继承
+#### 继承 inheritance
 子类（派生类 DerivedClassName）会继承父类（基类 BaseClassName）的属性和方法。
 class DerivedClassName(modname.BaseClassName):
 *单继承*
@@ -706,7 +781,18 @@ b = float(input('输入三角形第二边长: '))
 c = float(input('输入三角形第三边长: '))
 print('三角形的面积是 ',area(a,b,c))
 ```
+```
+class robot(object):
+    def __init__(self,sound):
+        self.s = sound
+    def sounds(self):
+        print(self.s)
 
+song_bird = robot("jijijijis")
+song_cat = robot("miaomiaomaio")
+
+song_bird.sounds()
+```
 ## 正则表达式
 re 模块使 Python 语言拥有全部的正则表达式功能。
 re.match(pattern, string, flags=0)
@@ -766,4 +852,9 @@ print_two_again("Zed","Shaw")
 print_one("Frist!")
 print_none()
 ```
+函数的 return 会给调用该函数的代码行一个结果。思路是这样的：函数通过参数接受输
+入，通过 return 返回输出。print 和它毫无关系，它只是在终端打印输出而已。
 
+exit(0)可以中止某个程序
+
+flow chart流程图
