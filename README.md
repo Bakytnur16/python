@@ -429,6 +429,28 @@ while i <= 10:
     i += 1
 print(numbers)
 ```
+```
+total = 0
+for i in range(101):
+    total += i
+print(total)
+
+for i in range(5, -1, -1):
+    print(i, end=',') #5,4,3,2,1,0,
+```
+#### continue
+```
+while True:
+    print('Whoe are you ?')
+    name = input()
+    if name != 'Joe':
+        continue #除非等于Joe 不然循环；如果程序执行遇到 continue语句，就会马上跳回到循环开始处，重新对循环条件求值
+    print('Hello,Joe.What is the passwordd?(It is a fish.)')
+    password = input()
+    if password == 'swordfish':
+        break
+print('Access granted.')
+```
 ## 迭代器
 可以记住遍历的位置的对象。
 迭代器有两个基本的方法：iter() 和 next()。
@@ -454,6 +476,22 @@ while True:
 生成器就是一个迭代器
 
 ## 函数
+```
+def spam():
+    print(eggs)
+eggs = 42 # 全局变量
+spam()
+print(eggs)
+
+def spam():
+    eggs = 99
+    bacon()
+    print(eggs)
+def bacon():
+    ham = 101 # 局部变量
+    eggs = 0
+spam()
+```
 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。
 ```
 def add(number):
@@ -531,7 +569,11 @@ argv 解包（unpack)
 参数变量（argument variable）
 导入（import）的特性称为模块：模块（module）
 
-
+```
+import random
+for i in range(5):
+    print(random.randint(1, 10), end=', ')
+```
 ```
 cmd<< python 12.py Zio #take argument
 from sys import argv
