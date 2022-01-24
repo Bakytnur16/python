@@ -900,3 +900,10 @@ print_none()
 exit(0)可以中止某个程序
 
 flow chart流程图
+
+自顶向下 自底向上
+
+覆盖
+super
+super(Child, self).altered()
+super()最常见的用法是在基类的__init__函数中使用。
