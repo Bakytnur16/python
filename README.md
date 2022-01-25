@@ -188,6 +188,7 @@ s.pop()  随即删除
 ### Dictionary（字典）  
 list是有序的对象集合  
 dictionary是无序的对象集合。  
+dic.values(), dic.keys(), dic.items()
 字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。键(key)是唯一的  
 ```
 print (tinydict.keys())   # 输出所有键
@@ -203,6 +204,27 @@ questions = ['name', 'age', 'gender', 'id']
 answers = ['shuak', 18, 'female', '000111']
 for x, y in zip(questions, answers):
     print(f'{x} : {y}')
+    
+radiansdict.get(key, default=None) : 要取得其值的键，以及如果该键不存在时，返回的备用值。
+radiansdict.setdefault(key, default=None) : 你常常需要为字典中某个键设置一个默认值，当该键没有任何值时使用
+
+spam = {'color': 'red', 'age': 42}
+a = input()
+if a not in spam:
+    spam[a] = 'black' 默认值
+print(spam)
+
+
+str(dict)
+type(variable)
+radiansdict.clear()
+radiansdict.copy()
+radiansdict.fromkeys()
+radiansdict.get(key, default=None)
+key in dict
+radiansdict.update(dict2)
+pop(key[,default])
+popitem()
 ```
 
 > 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；# TypeError
@@ -306,21 +328,6 @@ print ("我叫 %s 今年 %d 岁!" % ('小明', 10))
  print(f"my name is {d}") # 作用一样 f-string 
 ```
 
-
-
-
-#### 字典 
-str(dict)
-type(variable)
-radiansdict.clear()
-radiansdict.copy()
-radiansdict.fromkeys()
-radiansdict.get(key, default=None)
-key in dict
-radiansdict.setdefault(key, default=None)
-radiansdict.update(dict2)
-pop(key[,default])
-popitem()
 
 #### 集合
 copy()
