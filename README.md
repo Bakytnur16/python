@@ -42,6 +42,7 @@ dfeifjeifj
 ```
 
 ## Python3 中有六个标准的数据类型：
+None表示空值，它是一个特殊 Python 对象, None的类型是NoneType
 ### Number（数字）:整数、布尔型、浮点数和复数  
 > int (整数), 如 1, 只有一种整数类型 int，表示为长整型。  
 > bool (布尔), 如 True. :True 和 False 是 Python 的关键字，用来表示真和假的概念。如果加了引号，它们
@@ -52,32 +53,118 @@ dfeifjeifj
 ### String（字符串) *变量[头下标:尾下标:步长]：*  
 0 1 2 3 4  
 -5 -4 -3 -2 -1  
+len(str) 字符串长度
+string[0] 字符串索引为0的字母
+```
+sentence = '我喜欢睡觉。'
+a = list(sentence)
+b = tuple(sentence)
+print(a,b)
+['我', '喜', '欢', '睡', '觉', '。'] ('我', '喜', '欢', '睡', '觉', '。')
+```
 > string: 使用三引号(''' 或 """)可以指定一个多行字符串。  
 ```
 str='1234567890'
 print(str[1:7:2]) #打印第二个到第七个之前的每隔一个字符的字符
 print(str[:]) #打印所有
-```  
+``` 
+```
+center(width,fillchar)
+count(str, beg = 0, end=len(string))
+endswith(suffix, beg=0, end=len(string))
+isdigit()
+isnumeric()
+isspace()
+join(seq)
+len(string)
+lstrip()
+rfind(str, beg=0,end=len(string))
+replace(old, new [, max])
+rindex( str, beg=0, end=len(string))
+```
 ### List（列表）: *变量[头下标:尾下标]*  
 ```
-list = ['absc', 890, 2.23, 'bei']
-print(list[0])
-更改：
-list[2] = 2001
-更新增加：
-list1.append('Baidu')
+list1 = ['absc', 890, 2.23, 'bei']
+print(list1[0])
+
+多重赋值： size,color,weight,height = list1 #但是变量的数目和列表的长度必须严格相等
+list1[2] = 2001 #更改
+list[:] 列表里所有的值
+
+len(list)列表长度
+ for i in range(len(list)):
+查找：
+list.index('book') #返回第一个值为book的元素的*索引*
+list.count('b')  在列表中出现的次数
+添加：
+list.append('Baidu') #元素添加到列表尾
+list.insert(序列, obj) 指定位置插入一个元素，原本的元素向后移
 删除：
-del list[2]
+del list[2] del 语句将删除列表中下标处的值
+list.remove('book')删除列表中值为 x 的第一个元素
+排序：
+list.reverse()倒排
+list.sort( key=None, reverse=False)排序  #错误：spam = spam.sort()，sort()方法当场对列表排序
+使用“ASCII 字符顺序”
+spam.sort(key=str.lower) 将列表中所有的表项当成小写
+
 嵌套：
 [['a', 'b', 'c'], [1, 2, 3]]
+list(seq)
+
+list.extend(seq) 通过添加指定列表的所有元素来扩充列表，相当于 a[len(a):] = L。
+list.pop([index=-1])指定位置移除元素 没有指定索引，a.pop()返回最后一个元素
+list.clear()移除所有项
+
+复制：
+spam =[0,1, 2, 3, 4]
+cheese = spam #赋值，传对象的*引用*
+cheese[1] = 'hello'
+print(spam, cheese)
+#打印出来的spam也会更新为hello，因为它和cheese相等
+
+list.copy() 浅复制
+
+import copy
+spam =[0,1, 2, 3, 4]
+cheese = copy.copy(spam)
+cheese[1] = 42
+print(spam, cheese)
+#打印出来：[0, 1, 2, 3, 4] [0, 42, 2, 3, 4]
+
+浅复制和深复制
+ a = [1,2,3,4,['a','b']]
+ c = copy.copy(a)
+ d = copy.deepcopy(a)
+ a.append(5)
+>>> a[4].append('c')
+c= [1, 2, 3, 4, ['a', 'b', 'c']]
+>>> print 'd=',d
+d= [1, 2, 3, 4, ['a', 'b']]
+copy.copy对于可变类型，会进行浅拷贝
+copy.copy对于不可变类型，不会拷贝，仅仅是指向
 ```  
 
 ### Tuple（元组） 元素不可修改  
 tuple = ( 'abcd', 786 , 2.23, 'runoob', 70.2  )
 tup2 = (20,) # 一个元素，需要在元素后添加逗号  
 元组也可以使用+操作符进行拼接。  
+```
+tuple[0]
+tuple[1:3]
+len(tuple)
+元组的值*不能*被修改、添加或删除
 
+>>> type(('hello',))
+<class 'tuple'> #加逗号是元组
+>>> type(('hello'))
+<class 'str'> # 不加是字符串
 
+list = ['我', '喜', '欢', '睡', '觉','觉',, '。']
+print(tuple(list))
+('我', '喜', '欢', '睡', '觉', '觉', '。')
+
+```
 ### Set（集合）
 基本功能是进行成员关系测试和删除重复元素。
 创建一个空集合必须用 set()  
@@ -118,7 +205,7 @@ for x, y in zip(questions, answers):
     print(f'{x} : {y}')
 ```
 
-> 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；  
+> 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；# TypeError
 > 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
 
 consequence:
@@ -220,34 +307,7 @@ print ("我叫 %s 今年 %d 岁!" % ('小明', 10))
 ```
 
 
-#### 字符串函数：
-center(width,fillchar)
-count(str, beg = 0, end=len(string))
-endswith(suffix, beg=0, end=len(string))
-isdigit()
-isnumeric()
-isspace()
-join(seq)
-len(string)
-lstrip()
-rfind(str, beg=0,end=len(string))
-replace(old, new [, max])
-rindex( str, beg=0, end=len(string))
 
-#### 列表
-len(list)
-list(seq)
-list.append(obj) 元素添加到列表尾
-list.insert(序列, obj) 指定位置插入一个元素，原本的元素向后移
-list.count(obj)  在列表中出现的次数
-list.extend(seq) 通过添加指定列表的所有元素来扩充列表，相当于 a[len(a):] = L。
-list.index(obj)返回第一个值为 x 的元素的索引
-list.pop([index=-1])指定位置移除元素 没有指定索引，a.pop()返回最后一个元素
-list.remove(obj)删除列表中值为 x 的第一个元素
-list.reverse()倒排
-list.sort( key=None, reverse=False)排序
-list.clear()移除所有项
-list.copy() 浅复制
 
 #### 字典 
 str(dict)
@@ -280,6 +340,7 @@ union()
 1. 每个条件后面要使用冒号 :，表示接下来是满足条件后要执行的语句块。
 2. 使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块。
 3.  在Python中没有switch – case语句。  
+4.  break跳出循环，continue回到开始处，重新对循环条件求值
 
 elif = else if
 
