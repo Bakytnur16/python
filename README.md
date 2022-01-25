@@ -295,6 +295,7 @@ yield 暂停函数，返回到调用函数的代码中
 
 ## 函数
 #### 数学函数：
+import cmath
 abs
 ceil
 exp
