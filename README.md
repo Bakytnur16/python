@@ -191,6 +191,7 @@ list是有序的对象集合
 dictionary是无序的对象集合。  
 dic.values(), dic.keys(), dic.items()
 字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。键(key)是唯一的  
+镶嵌字典： 
 ```
 print (tinydict.keys())   # 输出所有键
 print (tinydict.values()) # 输出所有值
@@ -215,6 +216,8 @@ if a not in spam:
     spam[a] = 'black' 默认值
 print(spam)
 
+get() ??
+setdefault() ??
 
 str(dict)
 type(variable)
