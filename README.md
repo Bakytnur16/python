@@ -5,14 +5,15 @@
 > 多行：'''注释''' 或者""" """
 
 r = raw string，会自动将反斜杠转义
+
 \n 换行new line character 
-\t tab 制表符
-\\ 反斜杠（\）
-\' 单引号（'）
-\" 双引号（"）
-\f ASCII 进纸符（FF）
-\n ASCII 换行符（LF）
-\t ASCII 水平制表符（TAB）
+\t tab 制表符  
+\\ 反斜杠（\） 
+\' 单引号（'） 
+\" 双引号（"） 
+\f ASCII 进纸符（FF） 
+\n ASCII 换行符（LF） 
+\t ASCII 水平制表符（TAB） 
 ```
 print('r\n') # 打印 \n
 print('\n') #打印空行
