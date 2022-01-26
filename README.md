@@ -82,6 +82,32 @@ lstrip()
 rfind(str, beg=0,end=len(string))
 replace(old, new [, max])
 rindex( str, beg=0, end=len(string))
+
+isalpha() 只包含字母，非空
+isalnum() 只包含字母和数字，非空
+isdecimal 只包含数字字符，非空
+isspace() 只包含空格，制表符和换行，非空
+startswith(开始)和 endswith(结束)方法返回 True
+join（） ', '.join(['cats', 'rats', 'bats'])
+print(' '.join(['my', 'name','is', 'bob'])) 
+'My name is Simon'.split()
+print(" my name is simon.".split()) # ['my', 'name', 'is', 'simon.']
+spam.split('\n')
+
+'Hello'.rjust(10) 向右移
+'Hello'.rjust(10) 向左移
+'Hello'.center(20） 
+'Hello'.center(20, '=')
+'Hello'.center(20, '=') 中间
+删除 空白的字符串： strip(删除左右两边)、rstrip()和 lstrip()
+```
+import pyperclip
+pyperclip.copy('Hello world!')
+pyperclip.paste()
+'Hello world!'
+```
+用 pyperclip 模块拷贝粘贴字符串
+
 ```
 ### List（列表）: *变量[头下标:尾下标]*  
 ```
@@ -115,7 +141,7 @@ list(seq)
 
 list.extend(seq) 通过添加指定列表的所有元素来扩充列表，相当于 a[len(a):] = L。
 list.pop([index=-1])指定位置移除元素 没有指定索引，a.pop()返回最后一个元素
-list.clear()移除所有项
+list.clear()移除所有项，非空
 
 复制：
 spam =[0,1, 2, 3, 4]
@@ -193,6 +219,18 @@ dic.values(), dic.keys(), dic.items()
 字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。键(key)是唯一的  
 镶嵌字典： 
 ```
+all = {'Alice': {'apples': 5, 'pretzels': 12},
+    'Bob': {'ham sandwiches': 3, 'apples': 2},
+    'Carol': {'cups': 3, 'apple pies': 1}}
+
+def total(man, item):
+    numB = 0
+    for k, v in man.items():
+        numB = numB + v.get(item, 0)
+    return numB
+print(total(all,'pretzels'))
+```
+```
 print (tinydict.keys())   # 输出所有键
 print (tinydict.values()) # 输出所有值
 
@@ -230,7 +268,18 @@ radiansdict.update(dict2)
 pop(key[,default])
 popitem()
 ```
+```
+stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
 
+def displayInventory(inventory):
+    print("Inventory:")
+    item_total = 0
+    for k, v in inventory.items():
+        print(str(v)+' '+k)
+        item_total += v
+    print("Total number of items: " + str(item_total))
+displayInventory(stuff)
+```
 > 不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；# TypeError
 > 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
 
