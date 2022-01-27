@@ -109,7 +109,7 @@ pyperclip.paste()
 用 pyperclip 模块拷贝粘贴字符串
 
 ```
-### List（列表）: *变量[头下标:尾下标]*  
+### List（列表）: *变量[头下标:尾下标]*   
 ```
 list1 = ['absc', 890, 2.23, 'bei']
 print(list1[0])
@@ -153,7 +153,7 @@ print(spam, cheese)
 list.copy() 浅复制
 
 import copy
-spam =[0,1, 2, 3, 4]
+spam =[0,1, 2, 3, 4] 
 cheese = copy.copy(spam)
 cheese[1] = 42
 print(spam, cheese)
@@ -1024,7 +1024,7 @@ flow chart流程图
 
 自顶向下 自底向上
 
-覆盖
+覆盖 
 super
 super(Child, self).altered()
-super()最常见的用法是在基类的__init__函数中使用。
+super()最常见的用法是在基类的__init__函数中使用。 
