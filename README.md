@@ -117,7 +117,7 @@ print(list1[0])
 多重赋值： size,color,weight,height = list1 #但是变量的数目和列表的长度必须严格相等
 list1[2] = 2001 #更改
 list[:] 列表里所有的值
-
+print(squares[-3:]) 输出末尾三个元素
 len(list)列表长度
  for i in range(len(list)):
 查找：
@@ -133,6 +133,7 @@ list.remove('book')删除列表中值为 x 的第一个元素
 list.reverse()倒排
 list.sort( key=None, reverse=False)排序  #错误：spam = spam.sort()，sort()方法当场对列表排序
 使用“ASCII 字符顺序”
+sorted() 要保留列表元素原来的排列顺序，同时以特定的顺序呈现它们，可使用函数
 spam.sort(key=str.lower) 将列表中所有的表项当成小写
 
 嵌套：
