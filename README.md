@@ -1034,3 +1034,13 @@ flow chart流程图
 super
 super(Child, self).altered()
 super()最常见的用法是在基类的__init__函数中使用。 
+
+
+SciPy:科学，数字  
+PyGame：游戏  
+Pandas：做数据操作和分析  
+Natural Language Tool Kit：用来分析文本，以及实现垃圾邮件过滤和自动聊天机器人这样的软件  
+TensorFlow：机器学习和可视化  
+Requests：HTTP用户端以及Web知识  
+ScraPy：爬取网站内容  
+Kivy：创建桌面和移动平台的用户界面  
