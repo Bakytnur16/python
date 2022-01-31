@@ -17,6 +17,7 @@ r = raw string，会自动将反斜杠转义
 ```
 print('r\n') # 打印 \n
 print('\n') #打印空行
+raw_input()
 ```
 3. 多行语句用\
 4. Python 可以在同一行中使用多条语句，语句之间使用分号 ;
