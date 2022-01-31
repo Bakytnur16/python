@@ -21,9 +21,18 @@ raw_input()
 ```
 3. 多行语句用\
 4. Python 可以在同一行中使用多条语句，语句之间使用分号 ;
-
+```
+isinstance 函数判断变量的类型
+>>> x = 'abc'
+>>> y = 123
+>>> isinstance(x, str)
+True
+>>> isinstance(y, str)
+False
+```
 #### print
 ```
+
 name = 'bob'
 a = 'my name is {}'
 x = "My name is "
@@ -490,6 +499,7 @@ else:
     print('负数不在取值范围内')
 ```
 ```
+for ...in ... Iteration
 n = (20,'str','bob') #tuple
 for x in n:
     if (x == 'bob'):
@@ -498,6 +508,13 @@ for x in n:
     print('一个一个找吧', x)
 else:
     print('不用在找了，没有')
+    
+>>> for i, value in enumerate(['A', 'B', 'C']):
+...     print(i, value)
+...
+0 A
+1 B
+2 C
 ```
 ```
 a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
@@ -601,9 +618,38 @@ while True:
 ```
 
 ## 生成器
-生成器就是一个迭代器
+生成器就是一个迭代器,把一个列表生成式的[]改成()，就创建了一个generator
+定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator
+```
+>>> L = [x * x for x in range(10)]
+>>> L
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> g = (x * x for x in range(10))
+>>> g
+<generator object <genexpr> at 0x1022ef630>
+```
+
+#### 匿名函数
+```
+a = [x * x for x in range(11) if x % 2 == 0]
+print(a)
+
+b = [m + n for m in 'ABC' for n in 'XYZ']
+['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+>>> d = {'x': 'A', 'y': 'B', 'z': 'C' }
+>>> [k + '=' + v for k, v in d.items()]
+['y=B', 'x=A', 'z=C']
+```
 
 ## 函数
+一个* 元组或者列表，两个*字典
+如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
+```
+def person(name, age, *, city, job): #city='Beijing'设置默认值
+*后面的参数被视为命名关键字参数。
+    print(name, age, city, job)
+```
 ```
 def spam():
     print(eggs)
@@ -621,6 +667,7 @@ def bacon():
 spam()
 ```
 函数代码块以 def 关键词开头，后接函数标识符名称和圆括号 ()。
+函数体内部可以用return随时返回函数结果；
 ```
 def add(number):
     tom  = number * 3
