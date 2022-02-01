@@ -111,6 +111,17 @@ def str2float(s):
     s2 = list(map(int, [x for x in s[n+1:]]))
     return reduce(fn,s1)+reduce(fn,s2)/10**len(s2)
 print('str2float(\'123.456\') =', str2float('123.456'))
+
+filter()把传入的函数依次作用于每个元素，然后根据返回值是True还是False决定保留还是丢弃该元素。
+def is_odd(n):
+    return n % 2 ==0
+print(list(filter(is_odd, [1,2,4,5,6,9,10,15])))
+[2, 4, 6, 10]
+
+def not_empty(s):
+    return s and s.strip()
+
+print(list(filter(not_empty, ['A', '', 'B', None, 'C', ' '])))
 ```
 ## Python3 中有六个标准的数据类型：
 None表示空值，它是一个特殊 Python 对象, None的类型是NoneType
