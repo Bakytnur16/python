@@ -122,6 +122,20 @@ def not_empty(s):
     return s and s.strip()
 
 print(list(filter(not_empty, ['A', '', 'B', None, 'C', ' '])))
+
+
+def is_palindrome(n):
+    if len(str(n)) >1:
+        if str(n) == str(n)[::-1]: #字符串颠倒
+            return n
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
+
+def is_palindrome(n):
+    n = str(n)
+    return n == n[::-1]
+output = filter(is_palindrome, range(1, 1000))
+print(list(output))
 ```
 ## Python3 中有六个标准的数据类型：
 None表示空值，它是一个特殊 Python 对象, None的类型是NoneType
