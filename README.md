@@ -30,6 +30,10 @@ True
 >>> isinstance(y, str)
 False
 ```
+
+#### 变量
+__name = 私有变量（private）：内部可以访问，外部不能访问  
+
 #### print
 ```
 
@@ -726,6 +730,13 @@ b = [m + n for m in 'ABC' for n in 'XYZ']
 >>> [k + '=' + v for k, v in d.items()]
 ['y=B', 'x=A', 'z=C']
 ```
+### 装饰器 decorator
+OOP的装饰模式需要通过继承和组合来实现，而Python除了能支持OOP的decorator外，直接从语法层次支持decorator。Python的decorator可以用函数实现，也可以用类实现。
+
+
+Partial function偏函数:当函数的参数个数太多，需要简化时，使用functools.partial可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单
+
+decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便。
 
 ## 函数
 一个* 元组或者列表，两个*字典
@@ -857,6 +868,8 @@ Alright, so you said {likes} about liking me.
 You live in {lives}. Not sure where that is.
 And you have a {computer} computer.Nice.
 """)
+
+模块内部使用。在Python中，是通过_前缀来实现的。
 ```
 #### 输入和输出
 第三种方式是使用文件对象的 write() 方法，标准输出文件可以用 sys.stdout 引用。
@@ -978,6 +991,37 @@ while True:
 使用raise [Exception [, args [, traceback]]] 触发异常
 
 ### 面向对象：
+type()  
+type('str')  type(123)  
+isinstance()  
+isinstance(h, str)
+如果要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list  
+```
+>>> dir('ABC')
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+```
+getattr()、setattr()以及hasattr()，我们可以直接操作一个对象的状态  
+```
+>>> hasattr(obj, 'x') # 有属性'x'吗？
+True
+>>> obj.x
+9
+>>> hasattr(obj, 'y') # 有属性'y'吗？
+False
+>>> setattr(obj, 'y', 19) # 设置一个属性'y'
+>>> hasattr(obj, 'y') # 有属性'y'吗？
+True
+>>> getattr(obj, 'y') # 获取属性'y'
+19
+>>> obj.y # 获取属性'y'
+19
+```
+定义一个特殊的slots变量，来限制该class实例能添加的属性：
+```
+class Student(object):
+    __slots__ = ('name', 'age') # 用tuple定义允许绑定的属性名称
+```
+
 组合（composition）：指一个类可以将别的类作为它的部件构建起来，有点儿像车子和车轮的关系。
 属性（attribute）：类的一个属性，它来自于组合，而且通常是一个变量。
 self：在类的函数中，self 指代被访问的对象或者实例的一个变量。
@@ -1010,6 +1054,12 @@ class people:
 p = people('shuak', 10, 20)
 p.speak()
 ```
+#### 方法：
+str() 返回一个好看的字符串就可以了： def __str__(self)  
+str()返回用户看到的字符串，而repr()返回程序开发者看到的字符串  
+iter()方法返回一个迭代对象  
+next()方法拿到循环的下一个值  
+setitem()方法，把对象视作list或dict来对集合赋值  
 
 #### 继承 inheritance
 子类（派生类 DerivedClassName）会继承父类（基类 BaseClassName）的属性和方法。
