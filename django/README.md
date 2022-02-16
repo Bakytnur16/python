@@ -3,7 +3,7 @@
 virtualenv venv -p python3  
 source venv/bin/activate
 退出 虚拟环境 deactivate  
-pip install django==2.8.3  
+pip install django==3.2.83.  
 
 ### 创建django项目： django-admin startproject myproject  
 
