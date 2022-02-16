@@ -1246,3 +1246,6 @@ Python 3.5.1 (default, May  6 2016, 10:59:36)
 
 ```
 添加包
+
+
+删除 ：rm -r shuak
