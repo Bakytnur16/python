@@ -1,14 +1,18 @@
 ## Django
 # 虚拟环境
-virtualenv venv -p python3  
 source venv/bin/activate
-退出 虚拟环境 deactivate  
-pip install django==3.2.83.  
+pip install virtualenv（virtualenv venv -p python3）    
+venv\scripts\activate（source venv/bin/activate）   
+退出 虚拟环境 deactivate   
 
-### 创建django项目： django-admin startproject myproject  
+vscode虚拟环境： https://zhuanlan.zhihu.com/p/264796406
 
+
+### 创建django项目： 
+django-admin startproject myproject  
+django-admin startapp 应用程序  
 python manage.py runserver  
-django-admin startapp boards应用程序  
+
 
 #### setting 'INSTALLED_APPS' 注册app
 'boards',  # 译者注：建议和作者一样空一行来区别内置app和自定义的app  
