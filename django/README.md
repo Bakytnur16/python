@@ -8,6 +8,14 @@ venv\scripts\activate（source venv/bin/activate）
 vscode虚拟环境： https://zhuanlan.zhihu.com/p/264796406  
 rm -r shuak  删除
 
+## linux
+sudo apt install python3-venv  
+python3 -m venv my-project-env  
+source my-project-env/bin/activate  
+pip install ...
+如果导入成功，则安装了： python -c"import requests"  
+deactivate  
+
 
 ### 创建django项目： 
 django-admin startproject myproject  
