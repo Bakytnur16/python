@@ -7,7 +7,7 @@ venv\scripts\activate（source venv/bin/activate）
 
 vscode虚拟环境： https://zhuanlan.zhihu.com/p/264796406  
 rm -r shuak  删除
-
+cp /etc/phpmyadmin/apache.conf /etc/apache2/sites-available/phpmyadmin
 ## linux
 sudo apt install python3-venv  
 python3 -m venv my-project-env  
