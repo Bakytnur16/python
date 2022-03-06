@@ -406,10 +406,10 @@ a = {'name': 'bob','age':20,'type':'str'} #dic
 #### 逻辑:and 与 ，or： 或， not：非
 
 ### 成员运算符
-in /  not in
+in /  not in  
 
 ### 身份运算符
-is is not
+is is not  
 
 is 用于判断两个变量引用对象是否为同一个， == 用于判断引用变量的值是否相等。
 ```
@@ -871,7 +871,7 @@ And you have a {computer} computer.Nice.
 
 模块内部使用。在Python中，是通过_前缀来实现的。
 ```
-#### 输入和输出
+#### 输入和输出  
 第三种方式是使用文件对象的 write() 方法，标准输出文件可以用 sys.stdout 引用。
 如果你希望输出的形式更加多样，可以使用 str.format() 函数来格式化输出值。
 如果你希望将输出的值转成字符串，可以使用 repr() 或 str() 函数来实现。
