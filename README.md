@@ -6,7 +6,7 @@
 
 r = raw string，会自动将反斜杠转义  
 
-\n 换行new line character 
+\n 换行new line character   
 \t tab 制表符  
 \\ 反斜杠（\） 
 \' 单引号（'） 
