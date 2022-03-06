@@ -4,7 +4,7 @@
 > 单行：#注释  
 > 多行：'''注释''' 或者""" """  
 
-r = raw string，会自动将反斜杠转义
+r = raw string，会自动将反斜杠转义  
 
 \n 换行new line character 
 \t tab 制表符  
