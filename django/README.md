@@ -6,6 +6,7 @@ venv\scripts\activate（source venv/bin/activate）
 退出 虚拟环境 deactivate   
 
 vscode虚拟环境： https://zhuanlan.zhihu.com/p/264796406  
+- https://pyloong.github.io/pythonic-project-guidelines/introduction/virtualenv/
 rm -r shuak  删除
 cp /etc/phpmyadmin/apache.conf /etc/apache2/sites-available/phpmyadmin
 ## linux
