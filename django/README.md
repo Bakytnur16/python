@@ -15,9 +15,12 @@ python3 -m venv my-project-env
 source my-project-env/bin/activate  
 pip install ...
 如果导入成功，则安装了： python -c"import requests"  
-deactivate  
-
-
+deactivate    
+#### 生成文件
+- pip freeze > requirements.txt  
+#### 安装依赖库
+- pip install -r requirements.txt  
+- 当提示权限不够时，前面加上sudo
 ### 创建django项目： 
 django-admin startproject myproject  
 cd myproject  
