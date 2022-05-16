@@ -309,7 +309,7 @@ s.update( x )
 移除：
 s.remove( x )
 s.discard( x )
-s.pop()  随即删除
+s.pop()  随机删除
 ```  
 
 ### Dictionary（字典）  
