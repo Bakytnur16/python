@@ -580,9 +580,9 @@ while i <= a:
 print(f'从0到{a}的和是：{sum}')
 ```
 ```
-a = int(input('随便来个数字:'));
+a = int(input('随便来个数字:'))
 while a > 0:
-    print(a, end=',');
+    print(a, end=',')
     a -= 1;
 else:
     print('负数不在取值范围内')
