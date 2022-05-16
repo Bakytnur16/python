@@ -273,7 +273,7 @@ copy.copy对于不可变类型，不会拷贝，仅仅是指向
 ```  
 
 ### Tuple（元组） 元素不可修改  
-tuple = ( 'abcd', 786 , 2.23, 'runoob', 70.2  )
+tuple = ( 'abcd', 786 , 2.23, 'runoob', 70.2)
 tup2 = (20,) # 一个元素，需要在元素后添加逗号  
 元组也可以使用+操作符进行拼接。  
 ```
@@ -543,10 +543,10 @@ while num < 30:
     num += 1;
 ```
 ```
-a = int(input('随便来个数字:'));
+a = int(input('随便来个数字:'))
 while a > 0:
-    print(a, end=',');
-    a -= 3;
+    print(a, end=',')
+    a -= 3
 
 ```
 ```
@@ -557,6 +557,7 @@ while i <= a:
     sum += i
     i += 1
 print(f'从0到{a}的和是：{sum}')
+
 ```
 
 CTRL+C 来退出当前的无限循环
@@ -808,7 +809,6 @@ def Foo(x):
         return 1
     else:
         return x+Foo(x-1)
-
 print(Foo(4))
 等于10
 ```
