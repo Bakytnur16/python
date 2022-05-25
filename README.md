@@ -48,6 +48,7 @@ print('my name is ', name)
 print(a.format(name))
 print(x + name)
 print(y.format(x,name))
+print('hello this is %s'%('zara'))
 
 print("""
 dfdfjd
@@ -169,29 +170,35 @@ print(str[1:7:2]) #打印第二个到第七个之前的每隔一个字符的字�
 print(str[:]) #打印所有
 ``` 
 ```
-center(width,fillchar)
-count(str, beg = 0, end=len(string))
-endswith(suffix, beg=0, end=len(string))
-isdigit()
-isnumeric()
-isspace()
-join(seq)
-len(string)
-lstrip()
-rfind(str, beg=0,end=len(string))
-replace(old, new [, max])
-rindex( str, beg=0, end=len(string))
+str.capitalize()句首首字母大写
+str.upper() 大写
+str.lower() 小写
+str.swapcase() 翻转 string 中的大小写
 
-isalpha() 只包含字母，非空
-isalnum() 只包含字母和数字，非空
-isdecimal 只包含数字字符，非空
-isspace() 只包含空格，制表符和换行，非空
-startswith(开始)和 endswith(结束)方法返回 True
-join（） ', '.join(['cats', 'rats', 'bats'])
-print(' '.join(['my', 'name','is', 'bob'])) 
-'My name is Simon'.split()
+str.find('word') str 是否包含在 string,是返回开始的索引值，否则返回-1
+str.replace(str1,str2) 
+len(str)
+join(seq)
+
+print(' '.join(['my', 'name','is', 'bob']))
 print(" my name is simon.".split()) # ['my', 'name', 'is', 'simon.']
 spam.split('\n')
+
+判断：
+islower() 是否小写
+isalnum() 只包含字母和数字，非空
+isalpha() 只包含字母，非空
+isnumeric() 只包含数字，非空
+isdecimal 只包含十进制数字，非空
+isdigit() 只包含数字
+isspace() 只包含空格，制表符和换行，非空
+
+center(width,fillchar)
+endswith(suffix, beg=0, end=len(string))
+rfind(str, beg=0,end=len(string))
+rindex( str, beg=0, end=len(string))
+startswith(开始)和 endswith(结束)方法返回 True
+lstrip()
 
 'Hello'.rjust(10) 向右移
 'Hello'.rjust(10) 向左移
