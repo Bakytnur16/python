@@ -213,6 +213,10 @@ pyperclip.paste()
 list1 = ['absc', 890, 2.23, 'bei']
 print(list1[0])
 
+x = [int(x) for x in input().split()]
+input: 1 2 3 4 4
+output:[1,2,3,4,4]
+
 多重赋值： size,color,weight,height = list1 #但是变量的数目和列表的长度必须严格相等
 list1[2] = 2001 #更改
 list[:] 列表里所有的值
