@@ -239,6 +239,7 @@ list.insert(序列, obj) 指定位置插入一个元素，原本的元素向后�
 删除：
 del list[2] del 语句将删除列表中下标处的值
 list.remove('book')删除列表中值为 x 的第一个元素
+list.pop(index)
 排序：
 list.reverse()倒排
 list.sort( key=None, reverse=False)排序  #错误：spam = spam.sort()，sort()方法当场对列表排序
