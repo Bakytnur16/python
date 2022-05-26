@@ -43,7 +43,7 @@ x = "My name is "
 y = "{} {}"
 print('my name is {}'.format(name))
 print('my name is bob')
-print(f'my name is {name}')
+print(f'my name is {name}') f 3.6引进的
 print('my name is ', name)
 print(a.format(name))
 print(x + name)
