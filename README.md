@@ -289,6 +289,17 @@ tuple = ( 'abcd', 786 , 2.23, 'runoob', 70.2)
 tup2 = (20,) # 一个元素，需要在元素后添加逗号  
 元组也可以使用+操作符进行拼接。  
 ```
+def my(*name_tuple): 一个星号代表元组
+    print(name_tuple)
+    
+def make_pizza(size, *toppings):
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for topping in toppings:
+        print(f"- {topping}")
+
+make_pizza(16,'pepperoni')
+make_pizza(12,'mushrooms', 'green peppers', 'extra cheese')
+
 tuple[0]
 tuple[1:3]
 len(tuple)
@@ -752,12 +763,32 @@ Partial function偏函数:当函数的参数个数太多，需要简化时，使
 decorator可以增强函数的功能，定义起来虽然有点复杂，但使用起来非常灵活和方便。
 
 ## 函数
-一个* 元组或者列表，两个*字典
-如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
+- 一个* 元组或者列表，两个*字典
+- 参数：元组(*tuple), 列表(list[]),集合(),字典(**dic)  
+- 如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：
 ```
 def person(name, age, *, city, job): #city='Beijing'设置默认值
 *后面的参数被视为命名关键字参数。
     print(name, age, city, job)
+
+字典参数：
+def setdic(**dic):
+    for k,v in dic.items():
+        print(f"{k} == {v}")
+
+setdic(**{'zhua':2,'ook':3})
+
+def setdic(**dic):
+    for k,v in dic.items():
+        print(f"{k} == {v}")
+
+setdic(list=2,wo=3)
+
+当参数是可选的使用：
+def function_name(para,para_1='default'): 等号两边不空
+    print(para_1)
+
+function_name(12)
 ```
 ```
 def spam():
@@ -853,6 +884,11 @@ argv 解包（unpack)
 导入（import）的特性称为模块：模块（module）
 
 ```
+在model.py里创建一个函数，在test.py里import model，给model传递参数：model.make_pizza()
+或者 from model import make_pizza as np
+
+def function_name(parameter_0, parameter_1='default value') 等号两边不能有空格
+
 import random
 for i in range(5):
     print(random.randint(1, 10), end=', ')
@@ -1003,12 +1039,68 @@ while True:
 使用raise [Exception [, args [, traceback]]] 触发异常
 
 ### 面向对象：
+![image](https://user-images.githubusercontent.com/64322636/170680608-1802b3ec-dadb-40b3-9ae0-de3b9865b484.png)  
 type()  
 type('str')  type(123)  
 isinstance()  
 isinstance(h, str)
 如果要获得一个对象的所有属性和方法，可以使用dir()函数，它返回一个包含字符串的list  
 ```
+# 构造函数：魔术方法 __new__
+
+# 初始化方法
+def __init__(self,name,age):
+# 实例化属性
+    self.name = name # self代表对象本身，相当于php里的$this->name
+    self.age = age
+
+- 没有__init__，重复写属性，会让代码变得冗余
+class Dog:
+    def sit(self,name):
+        print(f"{name} is now sitting")
+
+    def roll_over(self,age):
+        print(f"{age} rolled over")
+
+if __name__ == "__main__":
+    labuladuo = Dog()
+    labuladuo.sit("xiugougou")
+    labuladuo.roll_over(20)
+    
+ - 有__init__，定义了name，age属性
+class Dog:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = 6 #默认
+
+    def sit(self):
+        print(f"{self.name} is now sitting")
+
+    def roll_over(self):
+        print(f"{self.age} rolled over")
+
+if __name__ == "__main__":
+    labuladuo = Dog("xiugougou",20)
+    labuladuo.sit()
+    labuladuo.roll_over()
+    labulado.name = 12 #直接修改属性的值
+    labulado.sit()
+    
+    labulado.sit(12) #通过方法修改属性的值
+    labulado.sit()
+class Box:
+    def __init__(self):
+        self.num= 0 #如果变量有默认值，不写入函数（）里
+
+    def renum(self):
+        for i in range(0,21,2):
+            self.num += i
+        print(self.num)
+
+if __name__ == "__main__":
+    box1 = Box()
+    box1.renum()
+    
 >>> dir('ABC')
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
 ```
